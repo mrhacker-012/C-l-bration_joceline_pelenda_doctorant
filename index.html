@@ -8,6 +8,7 @@
 <title>Invitation — Jocelin Pelenda</title>
 
 <style>
+
 /* =========================================================
    RESET
 ========================================================= */
@@ -156,6 +157,7 @@ body{
     0%,100%{
         transform:translate3d(0,0,0) scale(1);
     }
+
     50%{
         transform:translate3d(20px,-28px,0) scale(1.12);
     }
@@ -198,6 +200,7 @@ body{
         opacity:.15;
         transform:translateY(0);
     }
+
     50%{
         opacity:1;
         transform:translateY(-30px);
@@ -275,6 +278,7 @@ body{
         opacity:0;
         transform:translateY(20px);
     }
+
     to{
         opacity:1;
         transform:translateY(0);
@@ -897,7 +901,6 @@ body{
 
 
 /* =========================================================
-   =============================================
    NAVIGATION
 ========================================================= */
 
@@ -1023,9 +1026,42 @@ body{
     0%{
         background-position:0% center;
     }
+
     100%{
         background-position:250% center;
     }
+}
+
+
+/* =========================================================
+   PAGE LOGO CENTRÉ
+========================================================= */
+
+.elenael-logo-center{
+    width:100%;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+}
+
+.elenael-logo-center .sig-conception{
+    font-size:9px;
+    letter-spacing:4px;
+}
+
+.elenael-logo-center .sig-brand{
+    font-size:26px;
+    margin-top:10px;
+}
+
+.elenael-logo-center .sig-motto{
+    margin-top:7px;
+    font-size:8px;
+    letter-spacing:2.5px;
 }
 
 
@@ -1373,10 +1409,6 @@ body{
         font-size:8px;
     }
 
-    textarea{
-        min-height:110px;
-    }
-
     .envelope{
         width:280px;
         height:185px;
@@ -1396,6 +1428,10 @@ body{
 
     .envelope.open .envelope-card{
         transform:translateY(-110px);
+    }
+
+    .elenael-logo-center .sig-brand{
+        font-size:23px;
     }
 }
 
@@ -1459,8 +1495,7 @@ a{
 }
 
 button:focus-visible,
-a:focus-visible,
-textarea:focus-visible{
+a:focus-visible{
     outline:2px solid var(--gold);
     outline-offset:3px;
 }
@@ -1888,7 +1923,7 @@ textarea:focus-visible{
 
                     <a
                         class="button"
-                        href="https://www.google.com/maps/search/?api=1&query=1ière%20Limete%20Funa%20Forgeron%20Av.%20Maman%20Ministre%20Kinshasa"
+                        href="https://maps.app.goo.gl/tkNkTUXmE6f5gbVP7?g_st=ac"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -1910,7 +1945,7 @@ textarea:focus-visible{
                         class="button"
                         data-page="4"
                     >
-                        📖 LIVRE D'OR
+                        ✨ ELENAEL EVENTS
                     </button>
 
                 </div>
@@ -1919,7 +1954,42 @@ textarea:focus-visible{
 
 
 
-            =====================================
+            <!-- =================================================
+                 PAGE 4 — LOGO ELENAEL EVENTS
+            ================================================== -->
+
+            <section
+                class="page"
+                id="page4"
+            >
+
+                <div class="elenael-logo-center">
+
+                    <div class="sig-conception">
+                        Une Conception Signée
+                    </div>
+
+                    <a
+                        href="https://wa.me/243992180557"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="sig-brand"
+                    >
+                        Elenael Events
+                    </a>
+
+                    <div class="sig-motto">
+                        L'art de l'événement d'exception
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- =================================================
              NAVIGATION
         ================================================== -->
 
@@ -2206,8 +2276,6 @@ function openEnvelope(){
 
     envelope.classList.add("open");
 
-
-    /* tentative de lecture */
 
     startMusic();
 
@@ -2603,21 +2671,9 @@ function initializeWhatsApp(){
         );
 
 
-    const guestbookButton =
-        document.getElementById(
-            "guestbookButton"
-        );
-
-
     confirmButton.addEventListener(
         "click",
         confirmPresence
-    );
-
-
-    guestbookButton.addEventListener(
-        "click",
-        sendGuestbook
     );
 
 }
@@ -2654,7 +2710,6 @@ Merci.`;
 
 
 /* =========================================================
-   ==================================
    CONFETTIS
 ========================================================= */
 
@@ -2879,12 +2934,6 @@ function initializeKeyboard(){
    FALLBACK MUSIQUE
 ========================================================= */
 
-/*
-   Certains navigateurs mobiles refusent
-   l'autoplay. Après une interaction utilisateur,
-   on retente donc la lecture.
-*/
-
 document.addEventListener(
     "pointerdown",
     function(){
@@ -2910,11 +2959,6 @@ document.addEventListener(
 document.body.addEventListener(
     "touchmove",
     function(event){
-
-        /*
-          Le scroll reste possible uniquement
-          à l'intérieur des pages.
-        */
 
         if(
             !event.target.closest(".page")
