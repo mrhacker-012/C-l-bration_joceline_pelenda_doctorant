@@ -2654,58 +2654,7 @@ Merci.`;
 
 
 /* =========================================================
-   LIVRE D'OR
-========================================================= */
-
-function sendGuestbook(){
-
-    const textarea =
-        document.getElementById(
-            "guestMessage"
-        );
-
-
-    const messageText =
-        textarea.value.trim();
-
-
-    if(!messageText){
-
-        textarea.focus();
-
-        alert(
-            "Veuillez écrire un petit mot pour Jocelin."
-        );
-
-        return;
-
-    }
-
-
-    const message =
-
-`💙 LIVRE D'OR — JOCELIN PELENDA
-
-👤 Invité(e) :
-${guestName}
-
-📝 Mon message :
-
-${messageText}
-
-✨ Message laissé à l'occasion
-de cette célébration.
-
-📅 ${EVENT_DATE_TEXT}
-🕓 ${EVENT_TIME_TEXT}`;
-
-
-    openWhatsApp(message);
-
-}
-
-
-/* =========================================================
+   ==================================
    CONFETTIS
 ========================================================= */
 
