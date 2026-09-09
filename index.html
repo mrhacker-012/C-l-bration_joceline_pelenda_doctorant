@@ -2439,7 +2439,7 @@ let touchEndX = 0;
 
 /* =========================================================
    RÉCUPÉRER LE NOM DE L'INVITÉ
-   COMPATIBLE IPHONE / SAFARI / ANDROID
+   FORMAT : ?n=Emmanuel_vital
 ========================================================= */
 
 function getGuestName(){
@@ -2450,10 +2450,7 @@ function getGuestName(){
         );
 
     let name =
-        params.get("invite") ||
-        params.get("guest") ||
-        params.get("nom") ||
-        params.get("name");
+        params.get("n");
 
     if(!name){
         return "Cher invité";
@@ -2461,7 +2458,7 @@ function getGuestName(){
 
     name =
         String(name)
-            .replace(/\+/g," ")
+            .replace(/_/g," ")
             .trim();
 
     return name || "Cher invité";
@@ -3342,4 +3339,4 @@ document.body.addEventListener(
 </script>
 
 </body>
- </html>
+   </html>
